@@ -54,6 +54,23 @@ export const styles = StyleSheet.create({
   },
   map: {
     width: '100%',
-    height: '90%',
+    height: '97%',
+  },
+  markerItem: {
+    borderRadius: 5,
+    backgroundColor: '#FFFFFF',
+  },
+  markerText: {
+    margin: 6,
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  popupContainer: {
+    width: 150,
+  },
+  popupTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'black',
   },
 });

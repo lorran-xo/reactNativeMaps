@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-import MapView, {Marker} from 'react-native-maps';
+import {Marker, Callout} from 'react-native-maps';
 import {Button, TouchableOpacity, View, Text, FlatList} from 'react-native';
-
+import {Map} from '../../components/Map';
 import {mockResponse} from '../../../mock';
 import {styles} from './styles';
 
 const region = {
-  latitude: 37.78825,
-  longitude: -122.4324,
+  latitude: 38.734404,
+  longitude: -9.1582873,
   latitudeDelta: 0.0922,
   longitudeDelta: 0.0421,
 };
@@ -57,22 +57,28 @@ export function Results() {
           contentContainerStyle={styles.flatListPadding}
         />
       ) : (
-        <MapView
-          style={styles.map}
-          // initialRegion={region}
-          region={region}>
+        <Map mapStyle={styles.map} region={region} initialRegion={region}>
           {mockResponse.clinics.map((item: any, index: number) => (
             <Marker
               key={index}
-              coordinate={{latitude: item.latitude, longitude: item.longitude}}
-              title={item.city}
-              description={item.name}
-              // image={{
-              //   uri: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-              // }}
-            />
+              coordinate={{latitude: item.latitude, longitude: item.longitude}}>
+              <View style={styles.markerItem}>
+                <Text style={styles.markerText}>{`${item.code}€`}</Text>
+              </View>
+              <Callout>
+                <View style={styles.popupContainer}>
+                  <Text style={styles.popupTitle}>{item.name}</Text>
+
+                  <Text style={styles.addressText}>
+                    {item.address} {item.postalCode}, {item.city}
+                  </Text>
+
+                  <Text style={styles.itemName}>{item.phone}</Text>
+                </View>
+              </Callout>
+            </Marker>
           ))}
-        </MapView>
+        </Map>
       )}
     </View>
   );

@@ -23,10 +23,9 @@
         </intent-filter>
       </activity>
        <!-- TODO: Google API KEY -->
-      <!-- talvez: android:name="com.google.android.maps.v2.API_KEY" -->
        <meta-data
      android:name="com.google.android.maps.v2.API_KEY"
-     android:value="ApiHere"/>
+     android:value="YOUR_APIKEY_HERE"/>
       <!-- Google API KEY -->
     </application>
 </manifest>

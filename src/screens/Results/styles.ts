@@ -1,34 +1,45 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    marginBottom: 20,
+    height: '100%',
+    backgroundColor: '#FFFFFF',
+  },
+  itemWrapper: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    margin: 10,
   },
   itemContainer: {
+    width: '95%',
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
   },
   itemName: {
+    fontSize: 20,
+    fontWeight: 'bold',
     color: '#2BC3DB',
   },
   priceContainer: {
-    backgroundColor: '#B2BEB5',
+    backgroundColor: '#E5E4E2',
     borderRadius: 5,
-    width: '5%',
   },
   priceText: {
-    fontSize: 12,
+    margin: 2,
+    fontSize: 18,
+    fontWeight: 'bold',
     color: 'black',
   },
   addressText: {
     fontSize: 13,
+    fontWeight: '400',
   },
   divider: {
-    width: '90%',
-    marginTop: '10px',
-    height: '1px',
-    backgroundColor: '#D3D3D3',
+    width: '100%',
+    marginTop: 15,
+    height: 1,
+    backgroundColor: '#E5E4E2',
   },
   scrollView: {
     position: 'absolute',
@@ -37,5 +48,12 @@ export const styles = StyleSheet.create({
   },
   scrollViewBottom: {
     paddingBottom: 100,
+  },
+  flatListPadding: {
+    paddingRight: 16,
+  },
+  map: {
+    width: '100%',
+    height: '90%',
   },
 });

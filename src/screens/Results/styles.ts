@@ -5,6 +5,24 @@ export const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: '#FFFFFF',
   },
+  pageHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#0096FF',
+    height: '8%',
+
+  },
+  headerText: {
+    fontSize: 20,
+    left: 10,
+    color: '#FFFFFF',
+  },
+  closeIcon: {
+    fontSize: 20,
+    right: 10,
+    color: '#FFFFFF',
+  },
   itemWrapper: {
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -57,7 +75,8 @@ export const styles = StyleSheet.create({
     height: '97%',
   },
   markerItem: {
-    borderRadius: 5,
+    borderRadius: 7,
+    borderWidth: 5,
     backgroundColor: '#FFFFFF',
   },
   markerText: {
@@ -71,6 +90,20 @@ export const styles = StyleSheet.create({
   popupTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#2BC3DB',
   },
+  // arrow: {
+  //   width: 0,
+  //   height: 0,
+  //   backgroundColor: 'transparent',
+  //   borderStyle: 'solid',
+  //   borderTopWidth: 10,
+  //   borderRightWidth: 5,
+  //   borderBottomWidth: 0,
+  //   borderLeftWidth: 5,
+  //   borderTopColor: 'red',
+  //   borderRightColor: 'transparent',
+  //   borderBottomColor: 'transparent',
+  //   borderLeftColor: 'transparent',
+  // },
 });

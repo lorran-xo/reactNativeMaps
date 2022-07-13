@@ -20,11 +20,14 @@ export function Results() {
     <View style={styles.container}>
       {!showMap ? (
         <>
-          <Button
-            onPress={() => setShowMap(true)}
-            title="Ver mapa"
-            color="#B58B00"
-          />
+          <View style={styles.pageHeader}>
+            <View />
+            <Text style={styles.headerText}>Rede Médica</Text>
+            {/* Trocar por um ícone de mapa */}
+            <Text style={styles.closeIcon} onPress={() => setShowMap(true)}>
+              mapa
+            </Text>
+          </View>
 
           <FlatList
             data={mockResponse.clinics}
@@ -84,7 +87,7 @@ export function Results() {
                       styles.markerText
                     }>{`${item.evaluation?.code}€`}</Text>
                 </View>
-                {/* <View style={styles.arrow} /> */}
+                <View style={styles.arrow} />
 
                 <Callout>
                   <View style={styles.popupContainer}>

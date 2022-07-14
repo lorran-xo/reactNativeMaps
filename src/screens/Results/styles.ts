@@ -9,9 +9,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#0096FF',
+    backgroundColor: '#00B1D1',
     height: '8%',
-
   },
   headerText: {
     fontSize: 20,

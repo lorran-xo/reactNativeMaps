@@ -1,4 +1,8 @@
 {
   "name": "reactNativeMaps",
-  "displayName": "reactNativeMaps"
+  "displayName": "reactNativeMaps",
+  "packagerOpts": {
+    "config": "metro.config.js",
+    "sourceExts": ["js", "jsx", "ts", "tsx", "svg"]
+  }
 }

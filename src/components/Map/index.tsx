@@ -13,11 +13,22 @@ interface Props {
   region?: regionType;
   initialRegion?: regionType;
   children: any;
+  onMapPress?: () => void;
 }
 
-export function Map({mapStyle, region, initialRegion, children}: Props) {
+export function Map({
+  mapStyle,
+  region,
+  initialRegion,
+  children,
+  onMapPress,
+}: Props) {
   return (
-    <MapView style={mapStyle} initialRegion={initialRegion} region={region}>
+    <MapView
+      style={mapStyle}
+      onPress={onMapPress}
+      initialRegion={initialRegion}
+      region={region}>
       {children}
     </MapView>
   );

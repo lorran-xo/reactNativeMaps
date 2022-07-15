@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 20,
-    left: 10,
+    left: 20,
     color: '#FFFFFF',
   },
   closeIcon: {
@@ -71,17 +71,18 @@ export const styles = StyleSheet.create({
   },
   map: {
     width: '100%',
-    height: '97%',
+    height: '92%',
   },
-  markerItem: {
-    borderRadius: 7,
-    borderWidth: 3,
-    backgroundColor: '#FFFFFF',
+  phoneContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
-  markerText: {
-    margin: 6,
+  phoneText: {
+    fontSize: 15,
+    marginLeft: 7,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#2BC3DB',
   },
   popupContainer: {
     width: 150,

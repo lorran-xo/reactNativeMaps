@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
 import {Marker, Callout} from 'react-native-maps';
-import {Button, TouchableOpacity, View, Text, FlatList} from 'react-native';
+import {TouchableOpacity, View, Text, FlatList} from 'react-native';
+
 import {Map} from '../../components/Map';
 import {mockResponse} from '../../../mock';
+import Phone from '../../assets/phone.svg';
+import CloseIcon from '../../assets/close.svg';
+
 import {styles} from './styles';
 
 const region = {
@@ -15,6 +19,7 @@ const region = {
 
 export function Results() {
   const [showMap, setShowMap] = useState<boolean>(false);
+  const [selectedMarker, setSelectedMarker] = useState<number | null>();
 
   return (
     <View style={styles.container}>
@@ -24,6 +29,7 @@ export function Results() {
             <View />
             <Text style={styles.headerText}>Rede Médica</Text>
             {/* Trocar por um ícone de mapa */}
+
             <Text style={styles.closeIcon} onPress={() => setShowMap(true)}>
               mapa
             </Text>
@@ -68,28 +74,45 @@ export function Results() {
           <View style={styles.pageHeader}>
             <View />
             <Text style={styles.headerText}>Rede Médica</Text>
-            {/* Trocar por um ícone de fechar */}
+
             <Text style={styles.closeIcon} onPress={() => setShowMap(false)}>
-              X
+              <CloseIcon width={30} height={30} fill="#FFFFFF" />
             </Text>
           </View>
-          <Map mapStyle={styles.map} region={region} initialRegion={region}>
+          <Map
+            onMapPress={() => setSelectedMarker(null)}
+            mapStyle={styles.map}
+            region={region}
+            initialRegion={region}>
             {mockResponse.clinics.map((item: any, index: number) => (
               <Marker
+                onPress={() => setSelectedMarker(index)}
+                // onDeselect={() => setSelectedMarker(null)}
                 key={index}
                 coordinate={{
                   latitude: item.latitude,
                   longitude: item.longitude,
                 }}>
-                <View style={styles.markerItem}>
+                <View
+                  style={{
+                    borderRadius: 7,
+                    borderWidth: 3,
+                    backgroundColor:
+                      selectedMarker === index ? '#000000' : '#FFFFFF',
+                  }}>
                   <Text
-                    style={
-                      styles.markerText
-                    }>{`${item.evaluation?.code}€`}</Text>
+                    style={{
+                      margin: 6,
+                      fontWeight: 'bold',
+                      color: selectedMarker === index ? '#FFFFFF' : '#000000',
+                    }}>
+                    {`${item.evaluation?.code}€` || '-'}
+                  </Text>
                 </View>
                 <View style={styles.arrow} />
 
-                <Callout>
+                <Callout /*tooltip*/>
+                  {/* Tooltip true to style popup*/}
                   <View style={styles.popupContainer}>
                     <Text style={styles.popupTitle}>{item.name}</Text>
 
@@ -97,7 +120,13 @@ export function Results() {
                       {item.address} {item.postalCode}, {item.city}
                     </Text>
 
-                    <Text style={styles.itemName}>{item.phone}</Text>
+                    <View style={styles.phoneContainer}>
+                      <View>
+                        <Phone width={20} height={20} fill="#00B1D1" />
+                      </View>
+
+                      <Text style={styles.phoneText}>{item.phone}</Text>
+                    </View>
                   </View>
                 </Callout>
               </Marker>

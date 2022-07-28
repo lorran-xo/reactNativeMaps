@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -22,52 +22,9 @@ export const styles = StyleSheet.create({
     right: 10,
     color: '#FFFFFF',
   },
-  itemWrapper: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    margin: 10,
-  },
-  itemContainer: {
-    width: '95%',
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'space-between',
-  },
-  itemName: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#2BC3DB',
-  },
-  priceContainer: {
-    backgroundColor: '#E5E4E2',
-    borderRadius: 5,
-  },
-  priceText: {
-    margin: 2,
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: 'black',
-  },
   addressText: {
     fontSize: 13,
     fontWeight: '400',
-  },
-  divider: {
-    width: '100%',
-    marginTop: 15,
-    height: 1,
-    backgroundColor: '#E5E4E2',
-  },
-  scrollView: {
-    position: 'absolute',
-    height: '100%',
-    width: '100%',
-  },
-  scrollViewBottom: {
-    paddingBottom: 100,
-  },
-  flatListPadding: {
-    paddingRight: 16,
   },
   map: {
     width: '100%',
@@ -77,30 +34,28 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
+    marginTop: 2,
   },
   phoneText: {
-    fontSize: 15,
+    fontSize: 14,
     marginLeft: 7,
     fontWeight: 'bold',
     color: '#2BC3DB',
   },
-  popupContainer: {
-    width: 150,
-  },
   popupTitle: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
     color: '#2BC3DB',
   },
-  arrow: {
+  markerArrow: {
     width: 0,
     height: 0,
     backgroundColor: 'transparent',
     borderStyle: 'solid',
     borderTopWidth: 10,
-    borderRightWidth: 5,
+    borderRightWidth: 8,
     borderBottomWidth: 0,
-    borderLeftWidth: 5,
+    borderLeftWidth: 8,
     borderTopColor: 'black',
     borderRightColor: 'transparent',
     borderBottomColor: 'transparent',
@@ -108,4 +63,22 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     bottom: 1,
   },
+  bubble: {
+    flexDirection: "column",
+    alignSelf: 'flex-start',
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    borderColor: '#ccc',
+    borderWidth: 0.5,
+    padding: 13,
+    width: 150,
+  },
+  calloutArrow: {
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+    borderTopColor: '#FFFFFF',
+    borderWidth: 16,
+    alignSelf: 'center',
+    marginTop: -0.5,
+  }
 });

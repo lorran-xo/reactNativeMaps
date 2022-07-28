@@ -16,7 +16,7 @@ export const mockResponse = {
       email: '',
       relevance: 0.0,
       evaluation: {
-        code: 0,
+        code: 10,
         status: 0,
         source: 0,
       },
@@ -48,7 +48,7 @@ export const mockResponse = {
       email: '',
       relevance: 0.0,
       evaluation: {
-        code: 0,
+        code: 15,
         status: 0,
         source: 0,
       },
@@ -80,7 +80,7 @@ export const mockResponse = {
       email: '',
       relevance: 0.0,
       evaluation: {
-        code: 0,
+        code: 12.50,
         status: 0,
         source: 0,
       },
@@ -144,7 +144,7 @@ export const mockResponse = {
       email: '',
       relevance: 0.0,
       evaluation: {
-        code: 0,
+        code: 10,
         status: 0,
         source: 0,
       },
@@ -176,7 +176,7 @@ export const mockResponse = {
       email: '',
       relevance: 0.0,
       evaluation: {
-        code: 0,
+        code: 15,
         status: 0,
         source: 0,
       },
@@ -208,7 +208,7 @@ export const mockResponse = {
       email: '',
       relevance: 0.0,
       evaluation: {
-        code: 0,
+        code: 12.50,
         status: 0,
         source: 0,
       },
@@ -240,7 +240,7 @@ export const mockResponse = {
       email: '',
       relevance: 0.0,
       evaluation: {
-        code: 0,
+        code: 15,
         status: 0,
         source: 0,
       },
